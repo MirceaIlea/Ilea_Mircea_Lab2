@@ -42,15 +42,5 @@ namespace Ilea_Mircea_Lab2.Pages.Books
                 BookD.Categories = book.BookCategories.Select(s => s.Category);
             }
         }
-
-        public async Task OnGetAsync()
-        {
-            if (_context.Book != null)
-            {
-                Book = await _context.Book
-                    .Include(b => b.Publisher)
-                    .ToListAsync();
-            }
-        }
     }
 }
